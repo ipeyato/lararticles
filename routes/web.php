@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
+
+Route::get('home',['as' => 'root', 'uses' => 'StaticsController@root']);
+
+Route::get('profile',['as' => 'profile', 'uses' => 'StaticsController@profile']);
+
+Route::resource('articles', 'ArticlesController');
+
+Route::resource('comments', 'CommentsController');
