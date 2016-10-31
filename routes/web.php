@@ -22,3 +22,9 @@ Route::get('profile',['as' => 'profile', 'uses' => 'StaticsController@profile'])
 Route::resource('articles', 'ArticlesController');
 
 Route::resource('comments', 'CommentsController');
+
+Route::get('importExport','ImportExportController@importExport');
+Route::post('importExcel','ImportExportController@importExcel');
+Route::get('exportExcel/','ImportExportController@exportExcel')->name('exportExcel');
+Route::get('exportbyId/{id}','ImportExportController@exportbyId')->name('exportbyId');
+

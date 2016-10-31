@@ -19,11 +19,19 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::all();
-        return view('articles.index')->with('articles', $articles);
-    }
+    $articles = Article::paginate(10);//->toJson();
+    if ($request->ajax()) {
+       $view = (String)view('articles.list')
+       ->with('articles', $articles)
+       ->render();
+       return response()->json(['view' => $view]);
+   } else {
+      return view('articles.index')
+      ->with('articles', $articles);
+  }
+}
 
     /**
      * Show the form for creating a new resource.
@@ -97,8 +105,8 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-     Article::destroy($id);
-     Session::flash("notice", "Article success deleted");
-     return redirect()->route("articles.index");
- }
+       Article::destroy($id);
+     // Session::flash("notice", "Article success deleted");
+       return redirect()->route("articles.index");
+   }
 }

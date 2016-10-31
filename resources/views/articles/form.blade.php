@@ -19,7 +19,7 @@
 <div class="form-group">
   {!! Form::label('author', 'Author', array('class' => 'col-lg-3 control-label')) !!}
   <div class="col-lg-9">
-    {!! Form::textarea('author', null, array('class' => 'form-control')) !!}
+    {!! Form::text('author', null, array('class' => 'form-control')) !!}
     <div class="text-danger">{!! $errors->first('author') !!}</div>
   </div>
   <div class="clear"></div>

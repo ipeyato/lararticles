@@ -9,6 +9,11 @@
       <link href="/assets/css/bootstrap-material-design.min.css" rel="stylesheet" />
       <link href="/assets/css/ripples.min.css" rel="stylesheet" />
       <link href="/assets/css/costum/layouts.css" rel="stylesheet" />
+      <script src="/assets/js/jquery-1.11.1.js"></script>
+      <script src="/assets/js/bootstrap.min.js"></script>
+      <script src="/assets/js/material.min.js"></script>
+      <script src="/assets/js/ripples.min.js"></script>
+      <!-- <link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css"> -->
     </head>
     <body style="padding-top:60px;">
       <!--bagian navigation-->
@@ -37,10 +42,7 @@
           </div>
         </div>
       </div>
-      <script src="/assets/js/jquery-1.11.1.js"></script>
-      <script src="/assets/js/bootstrap.min.js"></script>
-      <script src="/assets/js/material.min.js"></script>
-      <script src="/assets/js/ripples.min.js"></script>
-      <script src="/assets/js/costum/layouts.js"></script>      
+      <script src="/assets/js/costum/layouts.js"></script>    
+      <script src="/assets/js/costum/costum.js"></script>
     </body>
   </html>

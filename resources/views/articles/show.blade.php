@@ -5,6 +5,16 @@
 	<p>{!! $article->content !!}</p>
 	<i>By {!! $article->author !!}</i>
 </div>
+
+<div>
+	{!! Form::open(array('route' => array('articles.destroy', $article->id), 'method' => 'delete')) !!}
+	{!! link_to(route('articles.index'), "Back", ['class' => 'btn btn-raised btn-info']) !!}
+	{!! link_to(route('articles.edit', $article->id), 'Edit', ['class' => 'btn btn-raised btn-warning']) !!}
+    {!! link_to('exportbyId/'. $article->id, 'Export Excel', array('class' => 'btn btn-raised btn-info')) !!}
+	{!! Form::submit('Delete', array('class' => 'btn btn-raised btn-danger', "onclick" => "return confirm('aslina?')")) !!}
+	{!! Form::close() !!}
+</div>
+
 <div>
 	<h3><i><u>Give Comments</u></i></h3>
 	{!! Form::open(['route' => 'comments.store', 'class' => 'form-horizontal', 'role' => 'form']) !!}
